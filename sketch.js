@@ -40,7 +40,7 @@ function draw() {
   }
   for(var i = 0; i<= 40; i++){
    logs = new Log(2);
-    logGroup1.add(Logs.spt);
+    logGroup1.add(logs.spt);
     logs.velocityX = -3;
   }
  
