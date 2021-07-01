@@ -17,6 +17,24 @@ function setup() {
   carGroup1 = new Group();
   logGroup1 = new Group();
   
+  for (var i = 1; i<=6; i++ ){
+    var bottomGrass = createSprite(683, height - 50 -(i*400), width, grassHeight);
+    if(i%2==0){
+      var road = createSprite(683, height - 150 -(i*400)- grassHeight, width, 300);
+      road.shapeColor = "black";
+    }
+    bottomGrass.shapeColor="grey";
+   }
+   for(var i = 0; i<= 40; i++){
+     cars = new Car(2);
+     carGroup1.add(cars.spt);
+     cars.velocityX = 3
+   }
+   for(var i = 0; i<= 40; i++){
+    logs = new Log(2);
+     logGroup1.add(logs.spt);
+     logs.velocityX = -3;
+   }
   
  
    
@@ -25,25 +43,7 @@ function setup() {
 function draw() {
   background("skyblue");
  
-  for (var i = 1; i<=6; i++ ){
-   var bottomGrass = createSprite(683, height - 50 -(i*400), width, grassHeight);
-   if(i%2==0){
-     var road = createSprite(683, height - 150 -(i*400)- grassHeight, width, 300);
-     road.shapeColor = "black";
-   }
-   bottomGrass.shapeColor="grey";
-  }
-  for(var i = 0; i<= 40; i++){
-    cars = new Car(2);
-    carGroup1.add(cars.spt);
-    cars.velocityX = 3
-  }
-  for(var i = 0; i<= 40; i++){
-   logs = new Log(2);
-    logGroup1.add(logs.spt);
-    logs.velocityX = -3;
-  }
- 
+  
   for(i=1;i<logGroup1.length; i++){
     if(logGroup1[i].x<0){
       logGroup1[i].x = width;
